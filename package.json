@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:start-server": "./nats-server",
+    "dev:start-server": "./nats-server -c server.conf",
+    "dev:start-server:debug": "./nats-server -V -c server.conf",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +19,9 @@
   },
   "homepage": "https://github.com/whiteprompt/r-d-nats#readme",
   "dependencies": {
-    "nats": "^2.0.8"
+    "nats": "^2.0.8",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "web3": "^1.4.0"
   },
   "devDependencies": {
     "dotenv-quokka-plugin": "^1.0.0"
