@@ -20,6 +20,7 @@
   "homepage": "https://github.com/whiteprompt/r-d-nats#readme",
   "dependencies": {
     "nats": "^2.0.8",
+    "truffle-hdwallet-provider": "^1.0.17",
     "web3": "^1.4.0"
   },
   "devDependencies": {
