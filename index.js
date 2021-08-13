@@ -46,7 +46,7 @@ const package = new PackageContract(
         console.log(JSON.stringify({data}, null, 2));
       })
     } else {
-      console.log(`[${subscription.protocol.options.name}][${subscription.getProcessed()}]: ${decodedMessage}`);
+      console.log(`unknown message - [${subscription.protocol.options.name}][${subscription.getProcessed()}]: ${decodedMessage}`);
     }
   }
 
