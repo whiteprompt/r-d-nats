@@ -28,15 +28,16 @@ const package = new PackageContract(
       console.log('draining connection...');
       await natsConnection.drain();
     } else if (decodedMessage.startsWith('MINT')) {
-      console.log('minting token...');
-      package.safeMint(decodedMessage).then((data) => {
+      const tokenUri = decodedMessage.split('MINT ')[1];
+      console.log(`minting token ${tokenUri} ...`);
+      package.safeMint(tokenUri).then((data) => {
         if (data.status === true) {
           console.log('minted');
         }
         console.log(JSON.stringify({data}, null, 2));
       })
     } else if (decodedMessage.startsWith('UPDATE')) {
-      console.log('updating token with', decodedMessage);
+      console.log(`updating token with ${decodedMessage} ...`);
       const attributes = decodedMessage.split('UPDATE ')[1].split(',');
       console.log(attributes);
       package.addUpdateTo(parseInt(attributes[0]), parseInt(attributes[1])).then((data) => {
