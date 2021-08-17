@@ -3,11 +3,11 @@ const PackageContract = require('./blockhain.js');
 
 const package = new PackageContract(
   './blockchain/build/contracts/Package.json',
-  '0x8a080f066f60072aEAFDDC310EeDD3d09980b315',
-  'http://127.0.0.1:9545/',
+  process.env.CONTRACT_ADDRESS,
+  process.env.NETWORK_ENDPOINT,
   {
-    mnemonic: 'ecology sail runway hidden clump rule range energy awesome nation execute light',
-    minterAccount: '0x5746df578f3b10b83b1e5fbbd533bcff739a7f22'
+    mnemonic: process.env.MNEMONIC,
+    minterAccount: process.env.MINTER_ACCOUNT
   }
 );
 
